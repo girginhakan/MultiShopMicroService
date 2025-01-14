@@ -20,7 +20,6 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers
         public async Task Handle(UpdateOrderDetailCommand command)
         {
             var values= await _repository.GetByIdAsync(command.OrderDetailId);
-            values.OrderDetailId = command.OrderDetailId;
             values.OrderingId = command.OrderingId;
             values.ProductId = command.ProductId;
             values.ProductPrice = command.ProductPrice;
